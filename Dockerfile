@@ -4,7 +4,7 @@ WORKDIR /app
 
 # Copy csproj and restore as distinct layers
 COPY *.csproj ./
-COPY nuget.config ./
+RUN dotnet nuget add source https://f.feedz.io/fennec/docgenerator/nuget/index.json -n feedz 
 RUN dotnet restore
 
 # Copy everything else and build
